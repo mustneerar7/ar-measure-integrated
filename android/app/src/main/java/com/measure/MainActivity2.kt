@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.infinity.measure2.CameraPermissionHelper
 import com.infinity.measure2.viewmodel.ViewModel
-import java.security.Permission
 
 public class MainActivity2 : AppCompatActivity() {
     val viewModel : ViewModel by viewModels()
