@@ -1,6 +1,7 @@
 package com.infinity.measure2.views
 
 
+import android.content.Intent
 import android.graphics.Color.rgb
 import android.os.Bundle
 import android.os.SystemClock
@@ -25,6 +26,7 @@ import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 
 import com.infinity.measure2.viewmodel.ViewModel
+import com.measure.MainActivity
 import com.measure.R
 import com.measure.databinding.FragmentArBinding
 
@@ -68,6 +70,10 @@ class ArFragment: Fragment(R.layout.fragment_ar) {
             viewModel.setLists(tempAnchorNodes)
             viewModel.setRenderables(pointRender, widthLineRender,heightLineRender)
             findNavController().navigate(R.id.action_arFragment_to_sceneViewFragment)
+        }
+
+        binding.floatingActionButton3.setOnClickListener {
+            returnToReactActivity()
         }
 
         initObjects()
@@ -332,6 +338,11 @@ class ArFragment: Fragment(R.layout.fragment_ar) {
         labelArray.clear()
         totalLength = 0f
 
+    }
+
+    fun returnToReactActivity(){
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        this.startActivity(intent)
     }
 
 
